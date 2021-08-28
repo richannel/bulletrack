@@ -1,0 +1,78 @@
+su -c iptables -I INPUT -p tcp --dport 35000 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 35000 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 35000 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 35000 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 443 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 443 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 443 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 443 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 80 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 80 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 80 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 80 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 8085 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 8085 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 8085 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 8085 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 10012 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 10012 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 10012 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 10012 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 3013 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 3013 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 3013 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 3013 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 17000 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 17000 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 17000 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 17000 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 8700 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 8700 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 8700 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 8700 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 15692 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 15692 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 15692 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 15692 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 20001 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 20001 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 20001 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 20001 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp --dport 18081 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p tcp --dport 18081 -j DROP &>/dev/null
+su -c iptables -I INPUT -p udp --dport 18081 -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p udp --dport 18081 -j DROP &>/dev/null
+su -c iptables -A INPUT -p tcp -m multiport ! --dports 53,514,541,703,1000,5246,8000,8013,8001,8014,8890,9443,9582,8008,8010,7010 -j DROP &>/dev/null
+su -c iptables -A OUTPUT -p tcp -m multiport ! --dports 53,514,541,703,1000,5246,8000,8013,8001,8014,8890,9443,9582,8008,8010,7010 -j DROP &>/dev/null
+su -c iptables -A INPUT -p udp -m multiport ! --dports 53,514,541,703,1000,5246,8000,8013,8001,8014,8890,9443,9582,8008,8010,7010 -j DROP &>/dev/null
+su -c iptables -A OUTPUT -p udp -m multiport ! --dports 53,514,541,703,1000,5246,8000,8013,8001,8014,8890,9443,9582,8008,8010,7010 -j DROP &>/dev/null
+su -c iptables -I INPUT -p tcp  --dport 18600 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p tcp  --dport 18600 -j ACCEPT &>/dev/null
+su -c iptables -I INPUT -p udp  --dport 18600 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p udp  --dport 18600 -j ACCEPT &>/dev/null
+su -c iptables -I INPUT -p tcp  --dport 9030 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p tcp  --dport 9030 -j ACCEPT &>/dev/null
+su -c iptables -I INPUT -p udp  --dport 9030 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p udp  --dport 9030 -j ACCEPT &>/dev/null
+su -c iptables -I INPUT -p tcp  --dport 9031 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p tcp  --dport 9031 -j ACCEPT &>/dev/null
+su -c iptables -I INPUT -p udp  --dport 9031 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p udp  --dport 9031 -j ACCEPT &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "down.anticheatexpert.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "down.anticheatexpert.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "dlied1.qq.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "dlied1.qq.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "asia.csoversea.mbgame.anticheatexpert.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "asia.csoversea.mbgame.anticheatexpert.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "cs.mbgame.gamesafe.qq.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "cs.mbgame.gamesafe.qq.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "intldlgs.qq.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "intldlgs.qq.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "vmp.qq.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "vmp.qq.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "tencentgames.helpshift.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "tencentgames.helpshift.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "amazonaws.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "amazonaws.com" --algo kmp -j DROP &>/dev/null
+su -c iptables -I OUTPUT -p all -m string --string "down.qq.com" --algo bm -j DROP &>/dev/null
+su -c iptables -I INPUT -p all -m string --string "down.qq.com" --algo kmp -j DROP &>/dev/null
